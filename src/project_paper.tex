@@ -6,7 +6,7 @@
 % Title Page
 %----------------------------------------------------------------------------
 
-% no page number
+% no page numbering
 \thispagestyle{empty}
 
 \begin{titlepage}
@@ -183,42 +183,35 @@ authors identify five levels of granularity which are listed
 below\footcite[Cf.][98]{huang_towards_2003}.
 
 \begin{description}
-	\item[Level 1 - source code] Documentation on this level contains the
-	     source code itself and its associated comments. It helps
-	     understanding algorithms and data structures.
+	\item[Level 1 - source code] Maecenas sem mauris, auctor quis rhoncus
+	     quis, auctor nec mauris. Aenean vestibulum malesuada sapien et
+	     posuere. Cras odio erat, gravida ac venenatis ut, fermentum nec
+	     leo
 
-	\item[Level 2 - design patterns] These are common programming idioms
-	     that are language independent and therefore on a higher abstraction
-	     level than source code documentation.
+	\item[Level 2 - design patterns] Mauris ut leo ligula. Donec commodo
+	     eros a sem viverra a gravida metus hendrerit. Suspendisse
+	     potenti.
 
 	\item[Level 3 - software architecture] Software architecture, or
 	     high-level design, describes the structural characteristics of the
 	     software system. In many cases UML is used to represent software
 	     architectures.
 
-	\item[Level 4 - requirements] Requirements usually describe intended
-	     functionality and attributes of a system from the users point of
-	     view.
+	\item[Level 4 - requirements] Mauris ut leo ligula. Donec commodo eros
+	     a sem viverra a gravida metus hendrerit. Suspendisse potenti.
 
 	\item[Level 5 - product lines] "A software product line is a family of
 	     products that share common features to meet the needs of a market
 	     area"\footcite[][]{ardis_et_al_2000}
-	     Product line documentation covers commonalities and differences in
-	     this product line.
 \end{description}
 
 
-\subsection{Relevance of documentation components}
+\subsection{Citation examples}
 %-----------------------------------------------------
 \label{sec:relevance_of_documentation}
 
-In order to define requirements for a documentation system, it is of importance to
-define which documentation artifacts are needed to which extend and actuality.
 
-There are several studies about the needs of software maintainers.
-The partially very different results and recommendations show how difficult it
-is to predict what documents will be needed.
-
+%citing examples:
 While \citeauthor{tilley_1992} stresses out the general importance of documented
 system architecture\footcite[Cf.][]{tilley_1992}, 
 \citeauthor{cioch_96} mentions that relevance depends on the
@@ -254,20 +247,11 @@ and environments.
 \FloatBarrier %nothing should float out of this subsubsection
 \newpage
 %------------------------------------------
-\section{Documentation system requirements}
+\section{Section}
 %------------------------------------------
 
-\subsection{Dependencies of requirements}
-
-Aenean eu dui a magna tempor dignissim. In sagittis auctor justo, id laoreet
-augue ultricies at. Nunc convallis ullamcorper viverra. Sed quis vulputate
-erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-inceptos himenaeos. Etiam posuere lacus ut nisl lobortis eu consectetur risus
-tempus. Ut mollis, est et posuere porttitor, lacus dui congue libero, et
-rhoncus massa ipsum a felis. 
-
-\subsection{Requirements for an exemplary small-scale project}
-\label{sec:requirements}
+\subsection{A table}
+\label{sec:atable}
 
 
 Reference to table \ref{tab:importance_artifacts}.\\
@@ -304,22 +288,7 @@ magna vitae velit consequat sed blandit nisi pulvinar. Ut nec mi at felis
 adipiscing porttitor eget sit amet velit. Duis rutrum\\
 nulla ut turpis semper eget congue leo eleifend. Aliquam fermentum, diam ac
 facilisis rhoncus, nunc eros aliquet nisi, eget mattis massa velit sit amet
-mi. Curabitur vitae eleifend massa. In ut nisi justo, in sodales mi. Aliquam a
-nisl ligula, eu ornare nibh. Duis lobortis dui at nibh faucibus bibendum.
-Suspendisse potenti. Proin semper urna at neque consequat fermentum.
 
-\begin{itemize}
-	\item Timestamp of the change
-	\item File/s that have been changed
-	\item Editor of the file/s
-	\item reference to bug-report if applicable
-\end{itemize}
-
-In general version control systems (VCS) can be categorized in two different
-types.\\
-One of them is classical VCS where there is a central repository that gets
-updated by all its committers and the other one is Distributed VCS (DVCS) where
-repositories can be distributed on different hosts and clients.
 
 In PEP 374\footcite{pep_374} several Python developers compare VCS and DVCS with
 common use case scenarios.\\
@@ -327,7 +296,7 @@ common use case scenarios.\\
 
 
 %***********
-\subsection{Documentation generators}
+\subsection{Aenean eu dui}
 Aenean eu dui a magna tempor dignissim. In sagittis auctor justo, id laoreet
 augue ultricies at. Nunc convallis ullamcorper viverra. Sed quis vulputate
 erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
@@ -335,30 +304,8 @@ inceptos himenaeos. Etiam posuere lacus ut nisl lobortis eu consectetur risus
 tempus. Ut mollis, est et posuere porttitor, lacus dui congue libero, et
 rhoncus massa ipsum a felis. 
 
-
-%Preselection explanation
-A preselection based on the above criteria resulted in a few representative
-documentation tools with a strong user basis and ongoing development.
-
-
-\begin{itemize}
-	\item Docutils\footnote{Project website:
-	   \url{http://docutils.sourceforge.net/}} was picked as a generic
-	   documentation tool, that is written for general
-	   purpose. %http://docutils.sourceforge.net/
-	\item Sphinx\footnote{Project website: \url{http://sphinx.pocoo.org}} is
-	   a full featured documentation server that was originally written for
-	   the Python
-	   language but also supports other domains. %http://sphinx.pocoo.org
-	\item Doxygen\footnote{Project website:
-	   \url{http://www.stack.nl/~dimitri/doxygen/}} is a documentation
-	   system that supports many domains and is specialized on extracting
-	   documentation directly from the source
-	   code.\\%http://www.stack.nl/~dimitri/doxygen/
-\end{itemize}
-
-
-
+Ut mollis, est et posuere porttitor, lacus dui congue libero, et
+rhoncus massa ipsum a felis. 
 
 
 \newpage
@@ -372,12 +319,12 @@ documentation tools with a strong user basis and ongoing development.
 
 
 %---------
-\subsection{Building the subsystems}
+\subsection{Subsection}
 After selecting the right tools, they need to be installed and configured on the
 server.\\ In a second step those subsystems need to be interconnected to a
 full-featured documentation system.
 
-\subsubsection{Version control system}
+\subsubsection{Subsubsection with listing}
 
 Aenean eu dui a magna tempor dignissim. In sagittis auctor justo, id laoreet
 augue ultricies at. Nunc convallis ullamcorper viverra. Sed quis vulputate
@@ -435,14 +382,12 @@ def render_to_file(template, filename, context):
 	\fbox{
 	\includegraphics[width=\textwidth]{img/placeholder1.jpg}
 	}
-	\captionof{figure}{Representation of a method in the API documentation in HTML format}
+	\captionof{figure}{Caption text}
 	\label{fig:api_render_to_file}
 \end{center}
 \end{figure}
 
-In order to be able to automatically create the API documentation in more than
-one format an additional shell-script was written, which is shown in listing
-\ref{lst:builddocs}.
+Here comes a reference to listing \ref{lst:builddocs}.
 
 \lstset{tabsize=2}
 \begin{lstlisting}[breaklines=true,frame=single,caption={Shellscript for building the software documentation in HTML and PDF},label=lst:builddocs]
@@ -467,7 +412,7 @@ pretium. Aenean dignissim porta arcu, ac pretium tortor placerat porttitor.
 
 
 %----------
-\subsection{Combination of the subsystems}
+\subsection{Subsection - A listing}
 
 
 
