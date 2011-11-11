@@ -1,0 +1,513 @@
+% Include settings and imports
+\input{header}
+
+
+%----------------------------------------------------------------------------
+% Title Page
+%----------------------------------------------------------------------------
+
+% no page number
+\thispagestyle{empty}
+
+\begin{titlepage}
+\vspace*{\fill}
+\begin{center}
+\vspace{3mm}
+
+
+\textbf{ % Title of paper (defined in header.tex)
+	\papertitle
+	} \\
+\vspace{1.5cm}
+
+
+1\textsuperscript{st} Project Paper \\ % Type of paper
+\vspace{1cm}
+
+
+provided on DD/MM/YYYY \\ % Date of provision
+\vspace{1cm}
+School of: Business  \\
+\vspace{0.6cm}
+
+Program: \dhbwprogram \\ % Program (defined in header.tex)
+\vspace{0.6cm}
+Course: \dhbwcourse \\ % Course (defined in header.tex)
+		
+\vspace{2.5cm}
+by \\
+\paperauthor % Author (defined in header.tex)
+\vspace{3cm}
+
+\begin{tabular}[h]{ll}
+
+Training Company:				&	BW Cooperative State University\\
+						&	Stuttgart:\\ 
+ 						&	\\
+Company						&	Prof. Dr. X\\
+Max Mustermann					&	\\
+Job Role				  	&	\\
+Department					&	\\
+						&	\\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_&	\\				
+Signature					&	\\		
+						&	\\
+%uncomment lines below if your paper contains confidential information
+
+%Confidential			&	\\
+%\multicolumn{2}{p{15cm}}{The content of the paper must not be made available to third
+%parties without approval of the training company.} \\
+\end{tabular}
+\end{center}
+\vspace*{\fill}
+\end{titlepage}
+
+\renewcommand{\baselinestretch}{1.5}\normalsize
+
+
+%----------------------------------------------------------------------------
+% Table of Contents
+%----------------------------------------------------------------------------
+\tableofcontents
+\newpage
+
+
+%----------------------------------------------------------------------------
+% Abbreviations
+%----------------------------------------------------------------------------
+% List needs to be indexed after each change.
+% This is done by executing the following command:
+% ~$ makeindex [filename].nlo -s nomencl.ist -o [filename].nls
+\addcontentsline{toc}{section}{List of Abbreviations}
+
+\nomenclature{API}{Applicable Programming Interface}%
+\nomenclature{DVCS}{Distributed Version Control System}%
+\nomenclature{LDAP}{Light Directory Access Protocol}%
+\nomenclature{PEP}{Python Enhancement Proposal}%
+\nomenclature{SSH}{Secure Shell}%
+\nomenclature{SVN}{Subversion}%
+\nomenclature{VCS}{Version Control System}%
+\nomenclature{HTML}{Hyper Text Transfer Protocol}%
+\nomenclature{PDF}{Portable Document Format}%
+\nomenclature{UML}{Unified Modeling Language}%
+\nomenclature{PEP}{Python Enhancement Proposal}%
+\nomenclature{BSD}{Berkeley Software Distribution}%
+\nomenclature{GPL}{GNU General Public License}%
+\nomenclature{RTF}{Rich Text Format}%
+\printnomenclature
+\newpage
+
+%----------------------------------------------------------------------------
+% List Of Tables
+%----------------------------------------------------------------------------
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\newpage
+
+%----------------------------------------------------------------------------
+% List of Figures
+%----------------------------------------------------------------------------
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+
+\newpage
+
+% Arabic numerals for page numbering
+\renewcommand{\thepage}{\arabic{page}}
+
+% Set page number to 1: 
+\setcounter{page}{1} 
+
+
+%----------------------------------------------------------------------------
+% Text of Paper
+%----------------------------------------------------------------------------
+% usage of cite commands as follows:
+% \footcite[ prenote ][ postnote/page ]{ key }
+
+
+
+\section{Introduction}
+%======================
+% "In the introduction, the problem and the thus resulting objective of the 
+% paper must be precisely formulated and the procedure explained. Any 
+% necessary differentiations must be made here. Instead of the headline
+% 'Introduction' it is also possible to use a different, more expressive
+% headline." (taken from the citation regulations of DHBW)
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat
+justo et velit porta tempus. Vestibulum quis elit erat. Fusce in dictum neque.
+Nulla turpis sapien, iaculis ut placerat vel, mollis non lectus. Nam eu tortor
+id mi vestibulum sodales. Fusce vel felis eget felis ornare sollicitudin. Ut
+sit amet magna vitae nibh tristique blandit. Fusce congue urna quis urna
+sollicitudin vitae gravida ligula ultrices. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit. Morbi urna ligula, mollis eget adipiscing id,
+condimentum ac purus. Morbi nec nulla non eros molestie fermentum. Proin
+euismod rutrum magna et venenatis. 
+
+
+\newpage
+%--------------------------------------------------------------
+\section{Development in dynamic teams with alternating members}
+%---------------------------------------------------------------
+
+example listing
+\lstinputlisting[language=Python]{lst/example-listing.py}
+
+Morbi tristique nibh ut massa viverra a condimentum elit aliquam. Donec et
+mauris ut orci eleifend condimentum vitae a felis. Duis ornare ipsum vel lorem
+semper ornare. Mauris sapien diam, interdum non posuere et, mollis vitae
+lorem. Quisque feugiat hendrerit mauris, non pretium metus interdum a. In nisi
+mi, venenatis vel eleifend vel, gravida non nulla. Ut tincidunt mattis
+laoreet. Phasellus vel rhoncus tortor. Praesent sed purus augue, et
+ullamcorper erat. Pellentesque ac scelerisque nunc. 
+
+
+ 
+\newpage
+%-----------------------------------
+\section{Software documentation}
+%------------------------------------------
+\FloatBarrier %nothing should float out of this subsubsection
+
+
+\subsection{Components of software documentation}
+Mauris ut leo ligula. Donec commodo eros a sem viverra a gravida metus
+hendrerit. Suspendisse potenti. Suspendisse imperdiet iaculis odio sed
+sagittis. Maecenas sem mauris, auctor quis rhoncus quis, auctor nec mauris.
+Aenean vestibulum malesuada sapien et posuere. Cras odio erat, gravida ac
+venenatis ut, fermentum nec leo.
+
+Donec commodo eros \citetitle{huang_towards_2003}. The
+authors identify five levels of granularity which are listed
+below\footcite[Cf.][98]{huang_towards_2003}.
+
+\begin{description}
+	\item[Level 1 - source code] Documentation on this level contains the
+	     source code itself and its associated comments. It helps
+	     understanding algorithms and data structures.
+
+	\item[Level 2 - design patterns] These are common programming idioms
+	     that are language independent and therefore on a higher abstraction
+	     level than source code documentation.
+
+	\item[Level 3 - software architecture] Software architecture, or
+	     high-level design, describes the structural characteristics of the
+	     software system. In many cases UML is used to represent software
+	     architectures.
+
+	\item[Level 4 - requirements] Requirements usually describe intended
+	     functionality and attributes of a system from the users point of
+	     view.
+
+	\item[Level 5 - product lines] "A software product line is a family of
+	     products that share common features to meet the needs of a market
+	     area"\footcite[][]{ardis_et_al_2000}
+	     Product line documentation covers commonalities and differences in
+	     this product line.
+\end{description}
+
+
+\subsection{Relevance of documentation components}
+%-----------------------------------------------------
+\label{sec:relevance_of_documentation}
+
+In order to define requirements for a documentation system, it is of importance to
+define which documentation artifacts are needed to which extend and actuality.
+
+There are several studies about the needs of software maintainers.
+The partially very different results and recommendations show how difficult it
+is to predict what documents will be needed.
+
+While \citeauthor{tilley_1992} stresses out the general importance of documented
+system architecture\footcite[Cf.][]{tilley_1992}, 
+\citeauthor{cioch_96} mentions that relevance depends on the
+maintainers stage of experience (from new comer to expert; after some years of
+working on the system). According to their study new comers need a general
+overview of the system and experts need low-level documentation such as API
+descriptions.\footcite[Cf.][]{cioch_96}
+
+According to a survey by \citeauthor{forward_relevance_2002} among managers and
+maintainers, specification documents are most consulted whereas low level
+documents are least consulted\footcite[Cf.][28-30]{forward_relevance_2002}.
+
+\citeauthor{grubb2003software} map information needs to maintainers roles
+in the software project. Analysts need to have a global view of the system and
+know the requirements. Designers need architectural understanding and
+information about low-level components. Finally programmers need a deep
+understanding of the source code and a higher level view - comparable to level
+two and three above.\footcite[Cf.][103-106]{grubb2003software}
+
+A survey by \citeauthor{de_souza_study_2005} offers a more differentiated view.
+Software maintainers were asked to answer how often they use different documents
+and how important they think these documents are. Answers of maintainers who
+said they work in projects with structured analysis paradigm (70 maintainers)
+were separated of those who said they work in projects with an object-oriented
+approach (54 maintainers).\footcite[Cf.][69-74]{de_souza_study_2005}
+According to the results of the survey, the source code itself is most important
+and comments get ranked second. Contrary to the results of \citeauthor{forward_relevance_2002}
+specification documents are only ranked on places seven to ten.
+One reason for these contrary results might be different project sizes, stages
+and environments.
+
+
+\FloatBarrier %nothing should float out of this subsubsection
+\newpage
+%------------------------------------------
+\section{Documentation system requirements}
+%------------------------------------------
+
+\subsection{Dependencies of requirements}
+
+Aenean eu dui a magna tempor dignissim. In sagittis auctor justo, id laoreet
+augue ultricies at. Nunc convallis ullamcorper viverra. Sed quis vulputate
+erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+inceptos himenaeos. Etiam posuere lacus ut nisl lobortis eu consectetur risus
+tempus. Ut mollis, est et posuere porttitor, lacus dui congue libero, et
+rhoncus massa ipsum a felis. 
+
+\subsection{Requirements for an exemplary small-scale project}
+\label{sec:requirements}
+
+
+Reference to table \ref{tab:importance_artifacts}.\\
+
+
+\begin{table}[H]
+\begin{center}
+  \begin{tabular}{p{2cm}|p{8cm}}
+	Priority &	Documentation artifact\\\hline
+	1. &	General project information \\
+	2. &	Requirements \\
+	3. &	Low level documentation\\
+	4. &	System architecture\\
+  \end{tabular}
+	\captionof{table}{caption}
+	\label{tab:importance_artifacts}
+\end{center}
+\end{table}
+
+
+
+
+\newpage
+%------------------------------------
+\section{Selection of tools}
+%------------------------------------
+
+
+\subsection{Revision control}
+%=============================
+
+Fusce pellentesque mattis neque, vitae porta sapien ornare quis. Etiam mollis
+magna vitae velit consequat sed blandit nisi pulvinar. Ut nec mi at felis
+adipiscing porttitor eget sit amet velit. Duis rutrum\\
+nulla ut turpis semper eget congue leo eleifend. Aliquam fermentum, diam ac
+facilisis rhoncus, nunc eros aliquet nisi, eget mattis massa velit sit amet
+mi. Curabitur vitae eleifend massa. In ut nisi justo, in sodales mi. Aliquam a
+nisl ligula, eu ornare nibh. Duis lobortis dui at nibh faucibus bibendum.
+Suspendisse potenti. Proin semper urna at neque consequat fermentum.
+
+\begin{itemize}
+	\item Timestamp of the change
+	\item File/s that have been changed
+	\item Editor of the file/s
+	\item reference to bug-report if applicable
+\end{itemize}
+
+In general version control systems (VCS) can be categorized in two different
+types.\\
+One of them is classical VCS where there is a central repository that gets
+updated by all its committers and the other one is Distributed VCS (DVCS) where
+repositories can be distributed on different hosts and clients.
+
+In PEP 374\footcite{pep_374} several Python developers compare VCS and DVCS with
+common use case scenarios.\\
+
+
+
+%***********
+\subsection{Documentation generators}
+Aenean eu dui a magna tempor dignissim. In sagittis auctor justo, id laoreet
+augue ultricies at. Nunc convallis ullamcorper viverra. Sed quis vulputate
+erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+inceptos himenaeos. Etiam posuere lacus ut nisl lobortis eu consectetur risus
+tempus. Ut mollis, est et posuere porttitor, lacus dui congue libero, et
+rhoncus massa ipsum a felis. 
+
+
+%Preselection explanation
+A preselection based on the above criteria resulted in a few representative
+documentation tools with a strong user basis and ongoing development.
+
+
+\begin{itemize}
+	\item Docutils\footnote{Project website:
+	   \url{http://docutils.sourceforge.net/}} was picked as a generic
+	   documentation tool, that is written for general
+	   purpose. %http://docutils.sourceforge.net/
+	\item Sphinx\footnote{Project website: \url{http://sphinx.pocoo.org}} is
+	   a full featured documentation server that was originally written for
+	   the Python
+	   language but also supports other domains. %http://sphinx.pocoo.org
+	\item Doxygen\footnote{Project website:
+	   \url{http://www.stack.nl/~dimitri/doxygen/}} is a documentation
+	   system that supports many domains and is specialized on extracting
+	   documentation directly from the source
+	   code.\\%http://www.stack.nl/~dimitri/doxygen/
+\end{itemize}
+
+
+
+
+
+\newpage
+%-----------------------------------------------------------------
+\section{Design and implementation of the documentation system}
+%----------------------------------------------------------------
+% summary of selected tools
+% reference to the overall requirements
+% theoretical approach
+% practical approach
+
+
+%---------
+\subsection{Building the subsystems}
+After selecting the right tools, they need to be installed and configured on the
+server.\\ In a second step those subsystems need to be interconnected to a
+full-featured documentation system.
+
+\subsubsection{Version control system}
+
+Aenean eu dui a magna tempor dignissim. In sagittis auctor justo, id laoreet
+augue ultricies at. Nunc convallis ullamcorper viverra. Sed quis vulputate
+erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+inceptos himenaeos. Etiam posuere lacus ut nisl lobortis eu consectetur risus
+tempus. Ut mollis, est et posuere porttitor, lacus dui congue libero, et
+rhoncus massa ipsum a felis. 
+
+\begin{lstlisting}[breaklines=true,frame=single,caption={WebDAV configuration in /etc/apache2/mods-available/dav\_svn.conf},label=lst:davsvn]
+<Location /svn/umbrella>
+  DAV svn
+  SVNPath /var/svn/umbrella
+  AuthType Basic
+  AuthName "Subversion Repository"
+  AuthUserFile /etc/apache2/dav_svn.passwd
+  Require valid-user
+</Location>
+\end{lstlisting}
+
+Reference to listing \ref{lst:davsvn}.
+
+
+
+\subsubsection{Documentation generator}
+\label{sec:documentation_generator}
+
+Another listing
+
+\lstset{tabsize=2,language=python}
+\begin{lstlisting}[breaklines=true,frame=single,caption={Python file with doc-strings},label=lst:doc-string]
+'''
+Defines all functions that are needed for creating the zip-file.
+'''
+from django.template.loader import render_to_string
+
+def render_to_file(template, filename, context):
+    '''
+    Renders a template with the given dictionary as
+    context.
+    Uses ``django.template.loader.render_to_string``
+
+    :param template: The template_name may be a string to load a single template using
+       get_template, or it may be a tuple to use select_template to find one of
+       the templates in the list.       
+    :param filename: Filename/path to use for saving the rendered template       
+    :param context: Dictionary that serves as context
+
+    :rtype: None
+    '''
+    open(filename, "w").write(render_to_string(template, context))
+\end{lstlisting}
+
+\begin{figure}[H]
+\begin{center}
+	\fbox{
+	\includegraphics[width=\textwidth]{img/placeholder1.jpg}
+	}
+	\captionof{figure}{Representation of a method in the API documentation in HTML format}
+	\label{fig:api_render_to_file}
+\end{center}
+\end{figure}
+
+In order to be able to automatically create the API documentation in more than
+one format an additional shell-script was written, which is shown in listing
+\ref{lst:builddocs}.
+
+\lstset{tabsize=2}
+\begin{lstlisting}[breaklines=true,frame=single,caption={Shellscript for building the software documentation in HTML and PDF},label=lst:builddocs]
+#!/bin/bash
+sphinx-apidoc -f -o source/api/apps ../umbrella/apps
+echo "building html docs..." > build.log
+annotate-output make html >> build.log
+echo "building pdf doc with latex..." >> build.log
+annotate-output make latexpdf >> build.log
+\end{lstlisting}
+
+Fusce id magna leo, in porta lectus. Aenean convallis magna sit amet ligula
+porttitor vehicula. Morbi pulvinar justo sed sapien pellentesque vitae viverra
+dui hendrerit. Vivamus nulla nunc, imperdiet congue euismod ultricies,
+sollicitudin eu felis. Pellentesque commodo risus eu quam facilisis et semper
+dolor aliquam. Vivamus neque magna, mattis vel aliquet eu, vulputate et leo.
+Proin congue dui eget dolor tempus vel congue magna ultrices. Aliquam ut elit
+ac lorem molestie adipiscing. Duis at nulla et lorem condimentum faucibus.
+Integer commodo turpis id erat volutpat consectetur. Mauris tempor gravida
+dui, vitae hendrerit quam laoreet sed. Vivamus eu lorem vel massa pulvinar
+pretium. Aenean dignissim porta arcu, ac pretium tortor placerat porttitor. 
+
+
+%----------
+\subsection{Combination of the subsystems}
+
+
+
+\lstset{tabsize=2,language=bash}
+\begin{lstlisting}[breaklines=true,frame=single,caption={Shell-script that handles the complete build process of the documentation},label=lst:cron-job]
+#!/bin/bash
+
+cd /home/umbrella/umbrella/trunk/umbrella
+svn update
+cd ../docs/source
+svn update
+cd ..
+./build_docs.sh
+\end{lstlisting}
+
+
+
+
+\newpage
+%-------------------------------------
+\section{Conclusion}
+%------------------------------------------
+Fusce id magna leo, in porta lectus. Aenean convallis magna sit amet ligula
+porttitor vehicula. Morbi pulvinar justo sed sapien pellentesque vitae viverra
+dui hendrerit. Vivamus nulla nunc, imperdiet congue euismod ultricies,
+sollicitudin eu felis. Pellentesque commodo risus eu quam facilisis et semper
+dolor aliquam. Vivamus neque magna, mattis vel aliquet eu, vulputate et leo.
+Proin congue dui eget dolor tempus vel congue magna ultrices. Aliquam ut elit
+ac lorem molestie adipiscing. Duis at nulla et lorem condimentum faucibus.
+Integer commodo turpis id erat volutpat consectetur. Mauris tempor gravida
+dui, vitae hendrerit quam laoreet sed. Vivamus eu lorem vel massa pulvinar
+pretium. Aenean dignissim porta arcu, ac pretium tortor placerat porttitor. 
+
+
+
+
+%-----------------------------------
+%END CONTENT
+%-----------------------------------
+
+
+% include footer with appendix, affidavit,...
+\input{footer}

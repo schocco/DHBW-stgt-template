@@ -1,0 +1,146 @@
+%---------------------------------------------------------------------
+% Imports and settings
+%---------------------------------------------------------------------
+
+\documentclass[12pt, a4paper]{scrartcl}
+
+% Language and encoding
+\usepackage[utf8]{inputenc}
+\usepackage[USenglish]{babel}
+\usepackage[T1]{fontenc}
+
+% Hyperrefs / links
+\usepackage{hyperref}
+
+% Appendix
+\usepackage[toc,page]{appendix}
+
+% Used to restrict floating of tables/illustrations
+\usepackage{float}
+\usepackage{placeins}
+
+% Footnotes + captions
+\usepackage{caption} 
+\usepackage{footnote}
+%\usepackage{ftnxtra}
+
+% Tables
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.4} % increase spacing for table rows
+\usepackage{longtable}
+
+% Biblatex: use stylefiles *.cbx, *.bbx
+\usepackage[citestyle=dhbw_ibim,bibstyle=dhbw_ibim,sorting=nty,block=space]{biblatex}
+\providecommand{\BIBand}{and}
+
+% Bibliography file
+\bibliography{software_documentation} 
+
+% Abbreviations
+\usepackage{nomencl}
+\renewcommand{\nomname}{List of Abbreviations}
+\setlength{\nomlabelwidth}{.25\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\makenomenclature
+
+% Listings
+% see http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
+\usepackage{listings}
+\lstset{numbers=left,captionpos=b,basicstyle=\footnotesize}
+
+% The Euro Symbol Package for LaTeX
+\usepackage[right]{eurosym}
+
+%--------------------------------------------------------------------
+% LAYOUT
+%--------------------------------------------------------------------
+
+% Abstand der Absätze 1.5ex:
+\usepackage{setspace}
+
+% Kopfzeilenpaket:
+\usepackage{scrpage2}
+
+% für das Einbinden von Grafiken
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+%Definition der Ränder
+\usepackage[paper=a4paper,left=35mm,right=15mm,top=25mm,bottom=20mm]{geometry}
+
+%Abstand der Fußnoten
+\deffootnote{10pt}{10pt}{\textsuperscript{\thefootnotemark\ }}
+
+% Regeln, bis zu welcher Tiefe (section,subsection,subsubsection) 
+% Überschriften angezeigt werden sollen (Anzeige der Überschriften im
+% Verzeichnis / Anzeige der Nummerierung)
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% Keine "Schusterjungen"
+\clubpenalty = 10000
+% Keine "Hurenkinder"
+\widowpenalty = 10000 
+\displaywidowpenalty = 10000
+
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+
+
+
+%--------------------------------------------------------------------
+% Document information
+%--------------------------------------------------------------------
+
+
+% Substitutions, only edit the contents here. These commands are used
+% elsewhere in the paper so that typing is reduced to a minimum
+\newcommand{\papertitle}{Automated documentation to decrease adjustment time for developers in teams with regularly alternating members}
+\newcommand{\paperauthor}{Rocco Schulz}
+
+\newcommand{\dhbwprogram}{International Business Information Management}
+\newcommand{\dhbwcourse}{WWI 2010 I}
+
+% Document itself
+\title{\papertitle}
+\author{\paperauthor}
+\date{\today}
+
+% for Distiller pdftex:
+\hypersetup{ 
+	pdfauthor={\paperauthor},
+	pdftitle={\papertitle},
+	pdfsubject={1st Project Paper - Program:  \dhbwprogram| Course: \dhbwcourse},
+	pdfkeywords = documentation project paper software source code tools automation,
+	linkcolor={black},
+	pdfview=FitV,     % FitH
+	pdfstartview=FitV,
+	urlcolor=black,   
+	breaklinks=true,   
+	citebordercolor=0 0 0, 
+	filebordercolor=0 0 0,
+	linkbordercolor=0 0 0,
+	menubordercolor=0 0 0,
+	urlbordercolor=0 0 0,
+	pdfhighlight=/I,
+	pdfborder=0 0 0,   % no boxes for hyperrefs
+	  } 
+
+
+
+%-------------------
+% Begin document
+%-------------------
+\begin{document}
+
+% roman numerals
+\renewcommand{\thepage}{\Roman{page}}
+
+\pagestyle{scrheadings}
+
+% Seitenzahl mittig als Kopfzeile setzen:
+\chead{\pagemark}
+\cfoot{}

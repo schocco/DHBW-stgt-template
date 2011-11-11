@@ -1,0 +1,55 @@
+%----------------------------------------------------------------------------
+% APPENDIX
+%----------------------------------------------------------------------------
+%TODO: Alter style of appendicies, include tableofappendicies
+
+
+
+%----------------------------------------------------------------------------
+% BIBLIOGRAPHY
+%----------------------------------------------------------------------------
+% bibliography file is set in header.tex
+
+\newpage
+\addsec{Lists of references} %addsec: komaskript befehl - keine Nummerierung
+
+% Set headings for bibliographies
+\defbibheading{literatur}{\subsection*{List of Literature}}
+\defbibheading{www}{\subsection*{List of Internet and Intranet Resources}}
+
+% Show bibliographies
+\printbibliography[nottype=online,heading=literatur]
+% warning: includes ALL types but online.
+% Check your bibfile to avoid wrong entries here
+\printbibliography[type=online,heading=www]
+
+
+%----------------------------------------------------------------------------
+% Affidavit
+%----------------------------------------------------------------------------
+\newpage
+\pagestyle{empty}
+
+\section*{Affidavit}
+
+\vspace{0.5cm}
+
+"I hereby declare\\
+
+\begin{enumerate}
+	\item that I completed my project paper without external help;
+	\item that I indicated the use of literal citations from literature as
+	      well as the use of ideas of other authors at the respective
+	      places in the paper.
+	\item that I have not presented my project paper for any other
+	      examination.
+\end{enumerate}
+
+I am aware of the fact that an untrue declaration will have legal
+consequences."
+\\ \\ \\ \\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\\
+PLACE, DD/MM/YYYY
+
+
+\end{document}
