@@ -19,9 +19,10 @@ Prerequisites
 ==============
 The following packages need to be installed prior to using this template:
 
-- _LaTeX (texlive): http://www.tug.org/texlive/
-  Make sure to install the latest version (package repositories in Linux distributions might be outdated)
-- _Biblatex: http://www.ctan.org/pkg/biblatex
+- `LaTeX (texlive) <http://www.tug.org/texlive/>`_ Make sure to install the
+  latest version (package repositories in Linux distributions might be
+  outdated)
+- `Biblatex <http://www.ctan.org/pkg/biblatex>`_
 - maybe some more
 
 
@@ -32,7 +33,20 @@ Customization
 - Add custom values for your project paper in `header.tex`
 - citation styles are defined in `dhbw_ibim.cbx`
 - bibliography styles are defined in `dhbw_ibim.bbx`
-- You can split your references into several lists by using filters like::
-    \printbibliography[type=online]
-    \printbibliography[nottype=online
+- You can split your references into several lists by using filters like
+  `\printbibliography[type=online]`, `\printbibliography[nottype=online]`
+
+
+References
+============
+
+LaTeX
+------
+- `LaTeX on Wikibooks <https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX>`_
+- `Texlive <http://www.tug.org/texlive/>`_
+- `Biblatex <http://www.ctan.org/pkg/biblatex>`_
+
+Citation regulations
+----------------------
+- `regulations of DHBW Stuttgart http://studium.dhbw-stuttgart.de/winf/informationen-downloads/projektarbeit.html`_
 
