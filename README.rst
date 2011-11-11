@@ -48,5 +48,5 @@ LaTeX
 
 Citation regulations
 ----------------------
-- `regulations of DHBW Stuttgart http://studium.dhbw-stuttgart.de/winf/informationen-downloads/projektarbeit.html`_
+- `regulations of DHBW Stuttgart <http://studium.dhbw-stuttgart.de/winf/informationen-downloads/projektarbeit.html>`_
 
