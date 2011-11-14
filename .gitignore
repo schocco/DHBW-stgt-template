@@ -1,0 +1,9 @@
+build
+tmp
+.settings
+.project
+.texlipse
+*.log
+*.nls
+*.pdf
+project_paper-blx.bib
