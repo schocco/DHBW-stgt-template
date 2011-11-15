@@ -1,10 +1,41 @@
 %----------------------------------------------------------------------------
 % APPENDIX
 %----------------------------------------------------------------------------
-%TODO: Alter style of appendicies, include tableofappendicies
+\newpage \begin{appendices} %sets the appendix environment and resets the
+							% section counters
+				% \renewcommand{\appendixtocname}{List of appendices}
+				% \renewcommand{\appendixpagename}{List of appendices}
+\appendixtocon %adds an 'Appendices' entry to the toc
+\renewcommand*\appendixpagename{\Large Appendices}  %renewal needed to set
+													% proper size of title
+\appendixpage %prints the title on the page
+
+\subsection*{List of Appendices}
+% TODO: create list of appendices with same style as lot or lof
 
 
+\begin{subappendices}
+% \appendixtocoff cant be used here.
+% Need to turn toc off for whole environment and manually set the toc entry
+% with \addcontentsline{toc}{subsection}{Preface}
 
+\renewcommand{\setthesubsection}{\arabic{subsection}:}%
+
+
+\subsection{something}
+kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj
+kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj
+kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj
+kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj
+kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtshtks
+kfslfrlerg\\
+wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj erthzrj
+
+\subsection{something else}
+najsjdn fwfwegt eg r th er5h z5er6h  rhg 
+
+\end{subappendices}
+\end{appendices}
 %----------------------------------------------------------------------------
 % BIBLIOGRAPHY
 %----------------------------------------------------------------------------
