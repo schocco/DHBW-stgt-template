@@ -1,41 +1,49 @@
 %----------------------------------------------------------------------------
 % APPENDIX
 %----------------------------------------------------------------------------
-\newpage \begin{appendices} %sets the appendix environment and resets the
-							% section counters
-				% \renewcommand{\appendixtocname}{List of appendices}
-				% \renewcommand{\appendixpagename}{List of appendices}
+% Appendix sections need to be within the subappendices environment.
+% Use the command \appsection{title} instead of \section to introduce each
+% appendix. This will add each appendix to the list of appendices.
+
+% sets the appendix environment and resets the section counters
+\newpage \begin{appendices} 
 \appendixtocon %adds an 'Appendices' entry to the toc
-\renewcommand*\appendixpagename{\Large Appendices}  %renewal needed to set
-													% proper size of title
+% renewal of appendixpagename needed to set proper font size of title
+\renewcommand*\appendixpagename{\Large Appendices}
 \appendixpage %prints the title on the page
 
 \subsection*{List of Appendices}
-% TODO: create list of appendices with same style as lot or lof
+%--------------------------------
+% style of the \listofappendices command is defined in header.tex
+\listofappendices
 
-
+%start environment for subappendices, so that new sections are formatted as
+%subsections of appendix
 \begin{subappendices}
-% \appendixtocoff cant be used here.
-% Need to turn toc off for whole environment and manually set the toc entry
-% with \addcontentsline{toc}{subsection}{Preface}
-
 \renewcommand{\setthesubsection}{\arabic{subsection}:}%
 
 
-\subsection{something}
-kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj
-kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj
-kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj
-kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj
-kskfslfrlerg wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtshtks
-kfslfrlerg\\
-wre gergh  ht rh r h rh   hrthrhrtjukseweffre htzkjtsht erthzrj erthzrj
+\appsection{Something}
+% include your appendix with the LaTeX include command
+Fusce id magna leo, in porta lectus. Aenean convallis magna sit amet ligula
+porttitor vehicula. Morbi pulvinar justo\\
+sed sapien pellentesque vitae viverra dui hendrerit. Viva- mus nulla nunc,
+imperdiet congue euismod ultricies, sollicitudin eu felis. Pellentesque commodo
+risus eu quam facilisis et semper dolor aliquam. Vivamus neque magna.
 
-\subsection{something else}
-najsjdn fwfwegt eg r th er5h z5er6h  rhg 
+\newpage
+\appsection{Something else}
+% include your appendix with the LaTeX include command
+Fusce id magna leo, in porta lectus. Aenean convallis magna sit amet ligula
+porttitor vehicula. Morbi pulvinar justo sed sapien pellentesque vitae viverra
+dui hendrerit. Viva- mus nulla nunc, imperdiet congue euismod ultricies,
+sollicitudin eu felis. Pellentesque commodo risus eu quam facilisis et semper
+dolor aliquam. Vivamus neque magna.
+
 
 \end{subappendices}
 \end{appendices}
+
 %----------------------------------------------------------------------------
 % BIBLIOGRAPHY
 %----------------------------------------------------------------------------

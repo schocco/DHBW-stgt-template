@@ -53,6 +53,29 @@
 % The Euro Symbol Package for LaTeX
 \usepackage[right]{eurosym}
 
+
+%--------------------------------------------------------------------
+% Definitions for the \listofappendices command
+%--------------------------------------------------------------------
+
+% define commands to create a separate list of appendices
+\makeatletter
+% create an auxiliary file for the appendix list with an .app extension
+\newcommand{\listofappendices}{\@starttoc{app}}
+% define command to be used to insert an appendix string into the app
+% table with entry type myappendix
+\newcommand{\addtoappendixlist}[1]{\addcontentsline{app}{myappendix}{#1}}
+% define the command actually used to start an Appendix - generate a
+% header and then insert the string name into the table.
+\newcommand{\appsection}[1]{\subsection{#1}\addtoappendixlist{#1}}
+% define the required command needed to format a myappendix type entry in
+% the table.  It uses the standard \@dottedtocline command to actually format
+% the entry in the table.
+\newcommand{\l@myappendix}[2]{\@dottedtocline{1}{1.5em}{2.3em}{#1}{#2}}
+\makeatother
+
+
+
 %--------------------------------------------------------------------
 % LAYOUT
 %--------------------------------------------------------------------
