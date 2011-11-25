@@ -78,8 +78,6 @@ Signature					&	\\
 % List needs to be indexed after each change.
 % This is done by executing the following command:
 % ~$ makeindex [filename].nlo -s nomencl.ist -o [filename].nls
-\addcontentsline{toc}{section}{List of Abbreviations}
-
 \nomenclature{API}{Applicable Programming Interface}%
 \nomenclature{DVCS}{Distributed Version Control System}%
 \nomenclature{LDAP}{Light Directory Access Protocol}%
@@ -95,21 +93,21 @@ Signature					&	\\
 \nomenclature{GPL}{GNU General Public License}%
 \nomenclature{RTF}{Rich Text Format}%
 \printnomenclature
+\addcontentsline{toc}{section}{List of Abbreviations}
 \newpage
 
 %----------------------------------------------------------------------------
 % List Of Tables
 %----------------------------------------------------------------------------
-\addcontentsline{toc}{section}{List of Tables}
 \listoftables
+\addcontentsline{toc}{section}{List of Tables}
 \newpage
 
 %----------------------------------------------------------------------------
 % List of Figures
 %----------------------------------------------------------------------------
-\addcontentsline{toc}{section}{List of Figures}
 \listoffigures
-
+\addcontentsline{toc}{section}{List of Figures}
 \newpage
 
 % Arabic numerals for page numbering
