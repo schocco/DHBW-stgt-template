@@ -387,7 +387,7 @@ def render_to_file(template, filename, context):
 
 Here comes a reference to listing \ref{lst:builddocs}.
 
-\lstset{tabsize=2}
+\lstset{tabsize=2,language=bash}
 \begin{lstlisting}[breaklines=true,frame=single,caption={Shellscript for building the software documentation in HTML and PDF},label=lst:builddocs]
 #!/bin/bash
 sphinx-apidoc -f -o source/api/apps ../umbrella/apps
@@ -415,7 +415,7 @@ pretium. Aenean dignissim porta arcu, ac pretium tortor placerat porttitor.
 
 
 \lstset{tabsize=2,language=bash}
-\begin{lstlisting}[breaklines=true,frame=single,caption={Shell-script that handles the complete build process of the documentation},label=lst:cron-job]
+\begin{lstlisting}[breaklines=true,frame=single,caption={Shellscript that handles the complete build process of the documentation},label=lst:cron-job]
 #!/bin/bash
 
 cd /home/umbrella/umbrella/trunk/umbrella
