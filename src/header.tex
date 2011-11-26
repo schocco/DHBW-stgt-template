@@ -45,10 +45,40 @@
 \renewcommand{\nomlabel}[1]{#1 \dotfill}
 \makenomenclature
 
-% Listings
+% Listings package
 % see http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
 \usepackage{listings}
-\lstset{numbers=left,captionpos=b,basicstyle=\footnotesize}
+% use package in order to colorify listings
+% see https://en.wikibooks.org/wiki/LaTeX/Colors
+\usepackage[usenames,dvipsnames]{color} 
+
+%color definitions for listings
+\definecolor{lstkeyword}{RGB}{0,0,110}
+\definecolor{lstidentifier}{RGB}{0,0,0}
+\definecolor{lstcomment}{RGB}{70,70,70}
+\definecolor{lststring}{RGB}{34,84,34}
+
+\lstset{ %
+	basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+	numbers=left,                   % where to put the line-numbers
+	numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+	stepnumber=1,                   % the step between two line-numbers. If it's 1
+	numbersep=10pt,                 % how far the line-numbers are from the code
+	backgroundcolor=\color{white},  % choose the background color. You must add
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	frame=single,                   % adds a frame around the code
+	tabsize=2,                      % sets default tabsize to 2 spaces
+	captionpos=b,                   % sets the caption-position to bottom
+	breaklines=true,                % sets automatic line breaking
+	breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+	title=\lstname,                 % show the filename of files included with \lstinputlisting;
+	keywordstyle=\color{lstkeyword}\bfseries,
+	identifierstyle=\color{lstidentifier},	
+	commentstyle=\color{lstcomment}, 	
+	stringstyle=\color{lststring}\ttfamily,		% typewriter type for strings	
+}
 
 % The Euro Symbol Package for LaTeX
 \usepackage[right]{eurosym}
@@ -57,7 +87,6 @@
 %--------------------------------------------------------------------
 % Definitions for the \listofappendices command
 %--------------------------------------------------------------------
-
 % define commands to create a separate list of appendices
 \makeatletter
 % create an auxiliary file for the appendix list with an .app extension
@@ -67,14 +96,13 @@
 \newcommand{\addtoappendixlist}[1]{\addcontentsline{app}{myappendix}{#1}}
 % define the command actually used to start an Appendix - generate a
 % header and then insert the string name into the table.
-\newcommand{\appsection}[1]{\subsection{#1}\addtoappendixlist{#1}}
+\newcommand{\appsection}[1]{%
+	\subsection{#1}\addtoappendixlist{#1}}
 % define the required command needed to format a myappendix type entry in
 % the table.  It uses the standard \@dottedtocline command to actually format
 % the entry in the table.
 \newcommand{\l@myappendix}[2]{\@dottedtocline{1}{1.5em}{2.3em}{#1}{#2}}
 \makeatother
-
-
 
 %--------------------------------------------------------------------
 % LAYOUT
