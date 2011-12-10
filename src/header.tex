@@ -5,26 +5,32 @@
 \documentclass[12pt, a4paper]{scrartcl}
 
 % Language and encoding
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[utf8]{inputenc}
 \usepackage[USenglish]{babel}
 \usepackage[T1]{fontenc}
 
 % Hyperrefs / links
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{hyperref}
 
 % Appendix
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[title]{appendix}
 
 % Used to restrict floating of tables/illustrations
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
 \usepackage{placeins}
 
 % Footnotes + captions
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{caption} 
 \usepackage{footnote}
 %\usepackage{ftnxtra}
 
 % Tables
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tabulary}
 \usepackage{tabularx}
 \usepackage{multirow}
@@ -32,13 +38,16 @@
 \usepackage{longtable}
 
 % Biblatex: use stylefiles *.cbx, *.bbx
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[citestyle=dhbw_ibim,bibstyle=dhbw_ibim,sorting=nty,block=space,firstinits=true]{biblatex}
 \providecommand{\BIBand}{and}
 
 % Bibliography file
+%%%%%%%%%%%%%%%%%%%%%%%
 \bibliography{software_documentation} 
 
 % Abbreviations
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{nomencl}
 \renewcommand{\nomname}{List of Abbreviations}
 \setlength{\nomlabelwidth}{.25\hsize}
@@ -47,12 +56,16 @@
 
 % Listings package
 % see http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings}
+
 % use package in order to colorify listings
 % see https://en.wikibooks.org/wiki/LaTeX/Colors
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[usenames,dvipsnames]{color} 
 
 %color definitions for listings
+%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{lstkeyword}{RGB}{0,0,110}
 \definecolor{lstidentifier}{RGB}{0,0,0}
 \definecolor{lstcomment}{RGB}{70,70,70}
@@ -81,26 +94,37 @@
 }
 
 % The Euro Symbol Package for LaTeX
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[right]{eurosym}
 
 
 %--------------------------------------------------------------------
 % Definitions for the \listofappendices command
 %--------------------------------------------------------------------
+
 % define commands to create a separate list of appendices
+%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
+
 % create an auxiliary file for the appendix list with an .app extension
+%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\listofappendices}{\@starttoc{app}}
+
 % define command to be used to insert an appendix string into the app
-% table with entry type myappendix
+% table with entry type my appendix
+%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\addtoappendixlist}[1]{\addcontentsline{app}{myappendix}{#1}}
+
 % define the command actually used to start an Appendix - generate a
 % header and then insert the string name into the table.
+%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\appsection}[1]{%
 	\subsection{#1}\addtoappendixlist{#1}}
+
 % define the required command needed to format a myappendix type entry in
 % the table.  It uses the standard \@dottedtocline command to actually format
 % the entry in the table.
+%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\l@myappendix}[2]{\@dottedtocline{1}{1.5em}{2.3em}{#1}{#2}}
 \makeatother
 
@@ -108,31 +132,39 @@
 % LAYOUT
 %--------------------------------------------------------------------
 
-% Abstand der Absätze 1.5ex:
+% line spacing 1.5:
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{setspace}
 
-% Kopfzeilenpaket:
+% package used for the page headers:
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{scrpage2}
 
-% für das Einbinden von Grafiken
+% package to include images
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
 \usepackage{wrapfig}
 
-%Definition der Ränder
+% define the layout margins
+%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[paper=a4paper,left=35mm,right=15mm,top=25mm,bottom=20mm]{geometry}
 
-%Abstand der Fußnoten
+% define the spacing of the footnotes
+%%%%%%%%%%%%%%%%%%%%%%%
 \deffootnote{10pt}{10pt}{\textsuperscript{\thefootnotemark\ }}
 
-% Regeln, bis zu welcher Tiefe (section,subsection,subsubsection) 
-% Überschriften angezeigt werden sollen (Anzeige der Überschriften im
-% Verzeichnis / Anzeige der Nummerierung)
+% declaring the depth (section, subsection, subsubsection ) for which headings will be displayed
+% (visibility in the TOC / numbering)
+%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
 % Keine "Schusterjungen"
+%%%%%%%%%%%%%%%%%%%%%%%
 \clubpenalty = 10000
+
 % Keine "Hurenkinder"
+%%%%%%%%%%%%%%%%%%%%%%%
 \widowpenalty = 10000 
 \displaywidowpenalty = 10000
 
@@ -149,6 +181,7 @@
 
 % Substitutions, only edit the contents here. These commands are used
 % elsewhere in the paper so that typing is reduced to a minimum
+%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\papertitle}{PAPERS TITLE}
 \newcommand{\paperauthor}{YOUR NAME}
 
@@ -156,11 +189,13 @@
 \newcommand{\dhbwcourse}{COURSE NAME}
 
 % Document itself
+%%%%%%%%%%%%%%%%%%%%%%%
 \title{\papertitle}
 \author{\paperauthor}
 \date{\today}
 
 % for Distiller pdftex:
+%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{ 
 	pdfauthor={\paperauthor},
 	pdftitle={\papertitle},
@@ -185,13 +220,16 @@
 %-------------------
 % Begin document
 %-------------------
+
 \begin{document}
 
 % roman numerals
+%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\thepage}{\Roman{page}}
 
 \pagestyle{scrheadings}
 
 % page numbers centered on top:
+%%%%%%%%%%%%%%%%%%%%%%%
 \chead{\pagemark}
 \cfoot{}
