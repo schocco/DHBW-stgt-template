@@ -85,6 +85,8 @@
 % Definitions for the \listofappendices command
 %--------------------------------------------------------------------
 \usepackage[title]{appendix}
+% use a counter for appendices
+\newcounter{appendixctr}
 % define commands to create a separate list of appendices
 \makeatletter
 % create an auxiliary file for the appendix list with an .app extension
@@ -95,7 +97,10 @@
 % define the command actually used to start an Appendix - generate a
 % header and then insert the string name into the table.
 \newcommand{\appsection}[1]{%
-	\subsection{#1}\addtoappendixlist{#1}}
+	\addtocounter{appendixctr}{1}
+	\subsection*{Appendix \arabic{appendixctr}:\hspace{15pt}#1}
+	\addtoappendixlist{Appendix \arabic{appendixctr}:\hspace{10pt}#1}
+}
 % define the required command needed to format a myappendix type entry in
 % the table.  It uses the standard \@dottedtocline command to actually format
 % the entry in the table.
