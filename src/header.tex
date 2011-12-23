@@ -4,6 +4,9 @@
 
 \documentclass[12pt, a4paper]{scrartcl}
 
+% ifthenelse, booleans, ...
+\usepackage{ifthen}
+
 % Language and encoding
 \usepackage[utf8]{inputenc}
 \usepackage[USenglish]{babel}
@@ -159,6 +162,9 @@
 \newcommand{\studyprogram}{STUDY PROGRAM}
 \newcommand{\studycourse}{COURSE NAME}
 \newcommand{\schoolof}{Business} %should start with capital
+
+\newboolean{confidential}
+\setboolean{confidential}{true} %false or true
 
 % Set document information
 \title{\papertitle}

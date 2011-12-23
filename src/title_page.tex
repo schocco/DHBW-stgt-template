@@ -40,15 +40,15 @@ by \\
 	Signature		&	\\
 					&	\\
 					&	\\
-%uncomment lines below if your paper contains confidential information
-%	\multicolumn{2}{p{\textwidth}}{\textbf{Confidential}}	\\
-%	\multicolumn{2}{p{\textwidth}}{The content of the paper must not be made
-%	available to third parties without approval of the training company.} \\
   \end{tabular}
 \end{center}
 \end{table}
 
-
+\ifthenelse{\boolean{confidential}}{%
+	\textbf{Confidential}\\%
+	The content of the paper must not be made available to third parties without
+	approval of the training company.\\
+}{}
 
 
 
