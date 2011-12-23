@@ -12,6 +12,17 @@
 % Hyperrefs / links
 \usepackage{hyperref}
 
+% Tables
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.4} % increase spacing for table rows
+\usepackage{longtable}
+
+% Graphics / figures
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
 % Used to restrict floating of tables/illustrations
 \usepackage{float}
 \usepackage{placeins}
@@ -19,14 +30,6 @@
 % Footnotes + captions
 \usepackage{caption} 
 \usepackage{footnote}
-%\usepackage{ftnxtra}
-
-% Tables
-\usepackage{tabulary}
-\usepackage{tabularx}
-\usepackage{multirow}
-\renewcommand{\arraystretch}{1.4} % increase spacing for table rows
-\usepackage{longtable}
 
 % Biblatex: use stylefiles *.cbx, *.bbx
 \usepackage[citestyle=dhbw_ibim,bibstyle=dhbw_ibim,sorting=nty,block=space,firstinits=true]{biblatex}
@@ -42,18 +45,17 @@
 \renewcommand{\nomlabel}[1]{#1 \dotfill}
 \makenomenclature
 
-% Listings package
-% see http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
-\usepackage{listings}
-% colorify listings
+% Colors (see https://en.wikibooks.org/wiki/LaTeX/Colors)
 \usepackage[usenames,dvipsnames]{color} 
-% see https://en.wikibooks.org/wiki/LaTeX/Colors
-%color definitions for listings
+
+% Listings
+\usepackage{listings}
+% color definitions for listings
 \definecolor{lstkeyword}{RGB}{0,0,110}
 \definecolor{lstidentifier}{RGB}{0,0,0}
 \definecolor{lstcomment}{RGB}{70,70,70}
 \definecolor{lststring}{RGB}{34,84,34}
-
+% listings style
 \lstset{ %
 	basicstyle=\footnotesize,       % the size of the fonts that are used for the code
 	numbers=left,                   % where to put the line-numbers
@@ -84,58 +86,62 @@
 % Definitions for the \listofappendices command
 %--------------------------------------------------------------------
 \usepackage[title]{appendix}
-% use a counter for appendices
-\newcounter{appendixctr}
-% define commands to create a separate list of appendices
-\makeatletter
-% create an auxiliary file for the appendix list with an .app extension
+
+% Use a counter for appendices
+\newcounter{appendixctr} 
+
+% Define commands to create a separate list of appendices
+\makeatletter 
+
+% Create an auxiliary file for the appendix list with an .app extension
 \newcommand{\listofappendices}{\@starttoc{app}}
-% define command to be used to insert an appendix string into the app
+
+% Define command to be used to insert an appendix string into the app
 % table with entry type myappendix
 \newcommand{\addtoappendixlist}[1]{\addcontentsline{app}{myappendix}{#1}}
-% define the command actually used to start an Appendix - generate a
+
+% Define the command actually used to start an Appendix - generate a
 % header and then insert the string name into the table.
 \newcommand{\appsection}[1]{%
 	\addtocounter{appendixctr}{1}
 	\subsection*{Appendix \arabic{appendixctr}:\hspace{15pt}#1}
 	\addtoappendixlist{Appendix \arabic{appendixctr}:\hspace{10pt}#1}
 }
-% define the required command needed to format a myappendix type entry in
+
+% Define the required command needed to format a myappendix type entry in
 % the table.  It uses the standard \@dottedtocline command to actually format
 % the entry in the table.
 \newcommand{\l@myappendix}[2]{\@dottedtocline{1}{1.5em}{2.3em}{#1}{#2}}
 \makeatother
 
+
+
 %--------------------------------------------------------------------
-% LAYOUT
+% SITE LAYOUT
 %--------------------------------------------------------------------
 
-% spacing between lines:
+% Spacing between lines:
 \usepackage{setspace}
 
-% heading lines:
+% Heading lines:
 \usepackage{scrpage2}
 
-% for graphics inclusions
-\usepackage{graphicx}
-\usepackage{wrapfig}
-
-% border definitions
+% Border definitions
 \usepackage[paper=a4paper,left=35mm,right=15mm,top=25mm,bottom=20mm]{geometry}
 
-% spacing of footnotes
+% Spacing of footnotes
 \deffootnote{10pt}{10pt}{\textsuperscript{\thefootnotemark\ }}
 
-% depth for the table of contents
+% Depth for the table of contents
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
-% no clubpenalty & widowpenalty
+% No clubpenalty & widowpenalty
 \clubpenalty = 10000
 \widowpenalty = 10000 
 \displaywidowpenalty = 10000
 
-% default fonts
+% Default fonts
 \renewcommand{\rmdefault}{phv}
 \renewcommand{\sfdefault}{phv}
 
@@ -144,23 +150,22 @@
 % Document information
 %--------------------------------------------------------------------
 
-% Substitutions, only edit the contents here. These commands are used
-% elsewhere in the paper so that typing is reduced to a minimum
+% Substitutions for re-use in several places
 \newcommand{\papertitle}{PAPERS TITLE}
 \newcommand{\paperauthor}{YOUR NAME}
-\newcommand{\papertype}{PAPER TYPE} %e.g. 3rd Project Paper
-\newcommand{\pdfkeywords}{key word} %separated by whitespace
+\newcommand{\papertype}{PAPER TYPE} % e.g. 3rd Project Paper
+\newcommand{\pdfkeywords}{KEY WORDS} % separated by whitespace
 
 \newcommand{\studyprogram}{STUDY PROGRAM}
 \newcommand{\studycourse}{COURSE NAME}
 \newcommand{\schoolof}{Business} %should start with capital
 
-% set document information
+% Set document information
 \title{\papertitle}
 \author{\paperauthor}
 \date{\today}
 
-% for Distiller pdftex:
+% Information for distiller pdftex:
 \hypersetup{ 
 	pdfauthor={\paperauthor},
 	pdftitle={\papertitle},
@@ -181,10 +186,10 @@
 	  } 
 
 
-
-%-------------------
+%--------------------------------------------------------------------
 % Begin document
-%-------------------
+%--------------------------------------------------------------------
+
 \begin{document}
 
 % roman numerals
