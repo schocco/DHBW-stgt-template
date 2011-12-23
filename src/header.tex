@@ -33,7 +33,7 @@
 \providecommand{\BIBand}{and}
 
 % Bibliography file
-\bibliography{software_documentation} 
+\bibliography{bibliography} 
 
 % Abbreviations
 \usepackage{nomencl}
@@ -45,10 +45,9 @@
 % Listings package
 % see http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
 \usepackage{listings}
-% use package in order to colorify listings
-% see https://en.wikibooks.org/wiki/LaTeX/Colors
+% colorify listings
 \usepackage[usenames,dvipsnames]{color} 
-
+% see https://en.wikibooks.org/wiki/LaTeX/Colors
 %color definitions for listings
 \definecolor{lstkeyword}{RGB}{0,0,110}
 \definecolor{lstidentifier}{RGB}{0,0,0}
@@ -111,54 +110,52 @@
 % LAYOUT
 %--------------------------------------------------------------------
 
-% Abstand der Absätze 1.5ex:
+% spacing between lines:
 \usepackage{setspace}
 
-% Kopfzeilenpaket:
+% heading lines:
 \usepackage{scrpage2}
 
-% für das Einbinden von Grafiken
+% for graphics inclusions
 \usepackage{graphicx}
 \usepackage{wrapfig}
 
-%Definition der Ränder
+% border definitions
 \usepackage[paper=a4paper,left=35mm,right=15mm,top=25mm,bottom=20mm]{geometry}
 
-%Abstand der Fußnoten
+% spacing of footnotes
 \deffootnote{10pt}{10pt}{\textsuperscript{\thefootnotemark\ }}
 
-% Regeln, bis zu welcher Tiefe (section,subsection,subsubsection) 
-% Überschriften angezeigt werden sollen (Anzeige der Überschriften im
-% Verzeichnis / Anzeige der Nummerierung)
+% depth for the table of contents
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
-% Keine "Schusterjungen"
+% no clubpenalty & widowpenalty
 \clubpenalty = 10000
-% Keine "Hurenkinder"
 \widowpenalty = 10000 
 \displaywidowpenalty = 10000
 
-\renewcommand{\rmdefault}{phv} % Arial
-\renewcommand{\sfdefault}{phv} % Arial
-
-
+% default fonts
+\renewcommand{\rmdefault}{phv}
+\renewcommand{\sfdefault}{phv}
 
 
 %--------------------------------------------------------------------
 % Document information
 %--------------------------------------------------------------------
 
-
 % Substitutions, only edit the contents here. These commands are used
 % elsewhere in the paper so that typing is reduced to a minimum
 \newcommand{\papertitle}{PAPERS TITLE}
 \newcommand{\paperauthor}{YOUR NAME}
+\newcommand{\papertype}{PAPER TYPE} %e.g. 3rd Project Paper
+\newcommand{\pdfkeywords}{key word} %separated by whitespace
 
-\newcommand{\dhbwprogram}{STUDY PROGRAM}
-\newcommand{\dhbwcourse}{COURSE NAME}
+\newcommand{\studyprogram}{STUDY PROGRAM}
+\newcommand{\studycourse}{COURSE NAME}
+\newcommand{\schoolof}{Business} %should start with capital
 
-% Document itself
+% set document information
 \title{\papertitle}
 \author{\paperauthor}
 \date{\today}
@@ -167,8 +164,8 @@
 \hypersetup{ 
 	pdfauthor={\paperauthor},
 	pdftitle={\papertitle},
-	pdfsubject={1st Project Paper - Program:  \dhbwprogram| Course: \dhbwcourse},
-	pdfkeywords = some keywords separated by whitespace,
+	pdfsubject={\papertype - Program:  \studyprogram| Course: \studycourse},
+	pdfkeywords = \pdfkeywords,
 	linkcolor={black},
 	pdfview=FitV,     % FitH
 	pdfstartview=FitV,
