@@ -33,17 +33,10 @@
 \nomenclature{PEP}{Python Enhancement Proposal}%
 \nomenclature{SSH}{Secure Shell}%
 \nomenclature{SVN}{Subversion}%
-\nomenclature{VCS}{Version Control System}%
-\nomenclature{HTML}{Hyper Text Transfer Protocol}%
-\nomenclature{PDF}{Portable Document Format}%
-\nomenclature{UML}{Unified Modeling Language}%
-\nomenclature{PEP}{Python Enhancement Proposal}%
-\nomenclature{BSD}{Berkeley Software Distribution}%
-\nomenclature{GPL}{GNU General Public License}%
-\nomenclature{RTF}{Rich Text Format}%
 \printnomenclature
 \addcontentsline{toc}{section}{List of Abbreviations}
 \newpage
+
 
 %----------------------------------------------------------------------------
 % List Of Tables
@@ -51,6 +44,7 @@
 \listoftables
 \addcontentsline{toc}{section}{List of Tables}
 \newpage
+
 
 %----------------------------------------------------------------------------
 % List of Figures
@@ -75,7 +69,7 @@
 
 
 \section{Introduction}
-%======================
+%=========================================================================
 % "In the introduction, the problem and the thus resulting objective of the 
 % paper must be precisely formulated and the procedure explained. Any 
 % necessary differentiations must be made here. Instead of the headline
@@ -94,67 +88,148 @@ euismod rutrum magna et venenatis.
 
 
 \newpage
-%--------------------------------------------------------------
-\section{Development in dynamic teams with alternating members}
-%---------------------------------------------------------------
 
-example listing
-\lstinputlisting[language=Python]{lst/example-listing.py}
-
-Morbi tristique nibh ut massa viverra a condimentum elit aliquam. Donec et
-mauris ut orci eleifend condimentum vitae a felis. Duis ornare ipsum vel lorem
-semper ornare. Mauris sapien diam, interdum non posuere et, mollis vitae
-lorem. Quisque feugiat hendrerit mauris, non pretium metus interdum a. In nisi
-mi, venenatis vel eleifend vel, gravida non nulla. Ut tincidunt mattis
-laoreet. Phasellus vel rhoncus tortor. Praesent sed purus augue, et
-ullamcorper erat. Pellentesque ac scelerisque nunc. 
- 
-\newpage
-%-----------------------------------
-\section{Software documentation}
-%------------------------------------------
-\FloatBarrier %nothing should float out of this subsubsection
+\section{Exemplary content}
+%=========================================================================
 
 
-\subsection{Components of software documentation}
-Mauris ut leo ligula. Donec commodo eros a sem viverra a gravida metus
-hendrerit. Suspendisse potenti. Suspendisse imperdiet iaculis odio sed
-sagittis. Maecenas sem mauris, auctor quis rhoncus quis, auctor nec mauris.
-Aenean vestibulum malesuada sapien et posuere. Cras odio erat, gravida ac
-venenatis ut, fermentum nec leo.
+\subsection{Listings}
+%--------------------------------------------------------------------------
 
-Donec commodo eros \citetitle{huang_towards_2003}. The
-authors identify five levels of granularity which are listed
-below\footcite[Cf.][98]{huang_towards_2003}.
+Read \url{https://en.wikibooks.org/wiki/LaTeX/Packages/Listings} for more
+information on the listings package.\\
 
+Source code can be included from external files:\\
+
+\lstinputlisting[language=Python, caption={Python function},
+				 label=lst:pyfunction]{lst/example-listing.py}
+
+Or as raw input in the paper:\\
+
+\begin{lstlisting}[breaklines=true,
+				   frame=single,
+				   caption={WebDAV configuration in
+					/etc/apache2/mods-available/dav\_svn.conf},
+				   label=lst:davsvn]
+<Location /svn/umbrella>
+  DAV svn
+  SVNPath /var/svn/umbrella
+  AuthType Basic
+  AuthName "Subversion Repository"
+  AuthUserFile /etc/apache2/dav_svn.passwd
+  Require valid-user
+</Location>
+\end{lstlisting}
+
+
+\lstset{tabsize=2,language=bash}
+\begin{lstlisting}[breaklines=true,frame=single,caption={Shellscript for building the software documentation in HTML and PDF},label=lst:builddocs]
+#!/bin/bash
+sphinx-apidoc -f -o source/api/apps ../umbrella/apps
+echo "building html docs..." > build.log
+annotate-output make html >> build.log
+echo "building pdf doc with latex..." >> build.log
+annotate-output make latexpdf >> build.log
+\end{lstlisting}
+
+
+\subsection{Tables}
+%--------------------------------------------------------------------------
+\label{sec:tables}
+
+There are several packages / environments available to style tables.
+An overview is available on \url{https://en.wikibooks.org/wiki/LaTeX/Tables}.
+
+
+
+\begin{table}[H]
+\begin{center}
+  \begin{tabular}{p{2cm}|p{8cm}}
+	Priority &	Documentation artifact\\\hline
+	1. &	General project information \\
+	2. &	Requirements \\
+	3. &	Low level documentation\\
+	4. &	System architecture\\
+  \end{tabular}
+  \captionof{table}{Priority of artifacts (descending)}
+  \label{tab:importance_artifacts}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+\rowcolors{1}{gray}{white}
+
+  \begin{tabular}{lll}
+    odd     & odd   & odd \\
+    even    & even  & even\\
+    odd     & odd   & odd \\
+    even    & even  & even\\
+  \end{tabular}
+  \captionof{table}{Table with colored rows}
+  \label{tab:colored}
+\end{center}
+\end{table}
+
+
+\subsection{Graphics}
+%--------------------------------------------------------------------------
+\label{sec:graphics}
+
+\begin{figure}[H]
+\begin{center}
+	\fbox{
+	\includegraphics[width=\textwidth]{img/placeholder1.jpg}
+	}
+	\captionof{figure}{Caption text}
+	\label{fig:placeholder}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+\setlength{\unitlength}{0.14in}% selecting unit length
+\centering
+% 32 length units wide, and 15 units high.
+\begin{picture}(32,15)
+
+\put(3,4){\framebox(6,3){$H_{B}(q)$}}
+\put(13,4){\framebox(6,3){$N[\cdot]$}}
+\put(23,4){\framebox(6,3){$H_{C}(q)$}}
+\put(0,5.5){\vector(1,0){3}}\put(9,5.5){\vector(1,0){4}}
+\put(19,5.5){\vector(1,0){4}}\put(29,5.5){\vector(1,0){3}}
+\put(-1,6.5) {$u(k)$}\put(30,6.5) {$y(k)$} \put(9.5,6.5)
+{$x_{B}(k)$}\put(19.5,6.5) {$x_{C}(k)$}
+\end{picture}
+	\caption{An LNL Block Oriented Model Structure (taken from
+		\url{http://www.iit.edu/graduate_college/academic_affairs/pdfs/FigureHelp1.pdf})}
+\label{fig:lnlbl}
+\end{figure}
+
+Other resources for graphics:
 \begin{description}
-	\item[Level 1 - source code] Maecenas sem mauris, auctor quis rhoncus
-	     quis, auctor nec mauris. Aenean vestibulum malesuada sapien et
-	     posuere. Cras odio erat, gravida ac venenatis ut, fermentum nec
-	     leo
-
-	\item[Level 2 - design patterns] Mauris ut leo ligula. Donec commodo
-	     eros a sem viverra a gravida metus hendrerit. Suspendisse
-	     potenti.
-
-	\item[Level 3 - software architecture] Software architecture, or
-	     high-level design, describes the structural characteristics of the
-	     software system. In many cases UML is used to represent software
-	     architectures.
-
-	\item[Level 4 - requirements] Mauris ut leo ligula. Donec commodo eros
-	     a sem viverra a gravida metus hendrerit. Suspendisse potenti.
-
-	\item[Level 5 - product lines] "A software product line is a family of
-	     products that share common features to meet the needs of a market
-	     area"\footcite[][]{ardis_et_al_2000}
+  \item[graphviz / dot] \url{http://www.graphviz.org/Resources.php}
+  \item[PyX output via Python] \url{http://www.texample.net/weblog/2008/oct/24/embedding-python-latex/}
+  \item[]
 \end{description}
 
+You can set FloatBarriers to make sure that graphics are placed inside one
+chapter.
 
-\subsection{Citation examples}
-%-----------------------------------------------------
-\label{sec:relevance_of_documentation}
+\FloatBarrier %nothing should float out of this subsection
+\newpage
 
+
+
+
+
+\subsection{Citation examples and references}
+%--------------------------------------------------------------------------
+\label{sec:citation}
+
+\subsubsection{Citations}
+%------------------------
 
 %citing examples:
 While \citeauthor{tilley_1992} stresses out the general importance of documented
@@ -184,202 +259,25 @@ were separated of those who said they work in projects with an object-oriented
 approach (54 maintainers).\footcite[Cf.][69-74]{de_souza_study_2005}
 According to the results of the survey, the source code itself is most important
 and comments get ranked second. Contrary to the results of \citeauthor{forward_relevance_2002}
-specification documents are only ranked on places seven to ten.
-One reason for these contrary results might be different project sizes, stages
-and environments.
+specification documents are only ranked on places seven to
+ten\footcite[Cf.][98]{huang_towards_2003}. One reason for these contrary results
+might be different project sizes, stages and environments.
 
-
-\FloatBarrier %nothing should float out of this subsubsection
-\newpage
-%------------------------------------------
-\section{Section}
-%------------------------------------------
-
-\subsection{A table}
-\label{sec:atable}
-
+\subsubsection{References}
+%--------------------------
 
 Reference to table \ref{tab:importance_artifacts}.\\
-
-
-\begin{table}[H]
-\begin{center}
-  \begin{tabular}{p{2cm}|p{8cm}}
-	Priority &	Documentation artifact\\\hline
-	1. &	General project information \\
-	2. &	Requirements \\
-	3. &	Low level documentation\\
-	4. &	System architecture\\
-  \end{tabular}
-	\captionof{table}{caption}
-	\label{tab:importance_artifacts}
-\end{center}
-\end{table}
-
-
+Reference to figure \ref{fig:placeholder}.
+Reference to section \ref{sec:conclusion}.
 
 
 \newpage
-%------------------------------------
-\section{Selection of tools}
-%------------------------------------
 
 
-\subsection{Revision control}
-%=============================
-
-Fusce pellentesque mattis neque, vitae porta sapien ornare quis. Etiam mollis
-magna vitae velit consequat sed blandit nisi pulvinar. Ut nec mi at felis
-adipiscing porttitor eget sit amet velit. Duis rutrum\\
-nulla ut turpis semper eget congue leo eleifend. Aliquam fermentum, diam ac
-facilisis rhoncus, nunc eros aliquet nisi, eget mattis massa velit sit amet
-
-
-In PEP 374\footcite{pep_374} several Python developers compare VCS and DVCS with
-common use case scenarios.\\
-
-
-
-%***********
-\subsection{Aenean eu dui}
-Aenean eu dui a magna tempor dignissim. In sagittis auctor justo, id laoreet
-augue ultricies at. Nunc convallis ullamcorper viverra. Sed quis vulputate
-erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-inceptos himenaeos. Etiam posuere lacus ut nisl lobortis eu consectetur risus
-tempus. Ut mollis, est et posuere porttitor, lacus dui congue libero, et
-rhoncus massa ipsum a felis. 
-
-Ut mollis, est et posuere porttitor, lacus dui congue libero, et
-rhoncus massa ipsum a felis. 
-
-
-\newpage
-%-----------------------------------------------------------------
-\section{Design and implementation of the documentation system}
-%----------------------------------------------------------------
-% summary of selected tools
-% reference to the overall requirements
-% theoretical approach
-% practical approach
-
-
-%---------
-\subsection{Subsection}
-After selecting the right tools, they need to be installed and configured on the
-server.\\ In a second step those subsystems need to be interconnected to a
-full-featured documentation system.
-
-\subsubsection{Subsubsection with listing}
-
-Aenean eu dui a magna tempor dignissim. In sagittis auctor justo, id laoreet
-augue ultricies at. Nunc convallis ullamcorper viverra. Sed quis vulputate
-erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-inceptos himenaeos. Etiam posuere lacus ut nisl lobortis eu consectetur risus
-tempus. Ut mollis, est et posuere porttitor, lacus dui congue libero, et
-rhoncus massa ipsum a felis. 
-
-\begin{lstlisting}[breaklines=true,frame=single,caption={WebDAV configuration in /etc/apache2/mods-available/dav\_svn.conf},label=lst:davsvn]
-<Location /svn/umbrella>
-  DAV svn
-  SVNPath /var/svn/umbrella
-  AuthType Basic
-  AuthName "Subversion Repository"
-  AuthUserFile /etc/apache2/dav_svn.passwd
-  Require valid-user
-</Location>
-\end{lstlisting}
-
-Reference to listing \ref{lst:davsvn}.
-
-
-
-\subsubsection{Documentation generator}
-\label{sec:documentation_generator}
-
-Another listing
-
-\lstset{tabsize=2,language=python}
-\begin{lstlisting}[breaklines=true,frame=single,caption={Python file with doc-strings},label=lst:doc-string]
-'''
-Defines all functions that are needed for creating the zip-file.
-'''
-from django.template.loader import render_to_string
-
-def render_to_file(template, filename, context):
-    '''
-    Renders a template with the given dictionary as
-    context.
-    Uses ``django.template.loader.render_to_string``
-
-    :param template: The template_name may be a string to load a single template using
-       get_template, or it may be a tuple to use select_template to find one of
-       the templates in the list.       
-    :param filename: Filename/path to use for saving the rendered template       
-    :param context: Dictionary that serves as context
-
-    :rtype: None
-    '''
-    open(filename, "w").write(render_to_string(template, context))
-\end{lstlisting}
-
-\begin{figure}[H]
-\begin{center}
-	\fbox{
-	\includegraphics[width=\textwidth]{img/placeholder1.jpg}
-	}
-	\captionof{figure}{Caption text}
-	\label{fig:api_render_to_file}
-\end{center}
-\end{figure}
-
-Here comes a reference to listing \ref{lst:builddocs}.
-
-\lstset{tabsize=2,language=bash}
-\begin{lstlisting}[breaklines=true,frame=single,caption={Shellscript for building the software documentation in HTML and PDF},label=lst:builddocs]
-#!/bin/bash
-sphinx-apidoc -f -o source/api/apps ../umbrella/apps
-echo "building html docs..." > build.log
-annotate-output make html >> build.log
-echo "building pdf doc with latex..." >> build.log
-annotate-output make latexpdf >> build.log
-\end{lstlisting}
-
-Fusce id magna leo, in porta lectus. Aenean convallis magna sit amet ligula
-porttitor vehicula. Morbi pulvinar justo sed sapien pellentesque vitae viverra
-dui hendrerit. Vivamus nulla nunc, imperdiet congue euismod ultricies,
-sollicitudin eu felis. Pellentesque commodo risus eu quam facilisis et semper
-dolor aliquam. Vivamus neque magna, mattis vel aliquet eu, vulputate et leo.
-Proin congue dui eget dolor tempus vel congue magna ultrices. Aliquam ut elit
-ac lorem molestie adipiscing. Duis at nulla et lorem condimentum faucibus.
-Integer commodo turpis id erat volutpat consectetur. Mauris tempor gravida
-dui, vitae hendrerit quam laoreet sed. Vivamus eu lorem vel massa pulvinar
-pretium. Aenean dignissim porta arcu, ac pretium tortor placerat porttitor. 
-
-
-%----------
-\subsection{Subsection - A listing}
-
-
-
-\lstset{tabsize=2,language=bash}
-\begin{lstlisting}[breaklines=true,frame=single,caption={Shellscript that handles the complete build process of the documentation},label=lst:cron-job]
-#!/bin/bash
-
-cd /home/umbrella/umbrella/trunk/umbrella
-svn update
-cd ../docs/source
-svn update
-cd ..
-./build_docs.sh
-\end{lstlisting}
-
-
-
-
-\newpage
-%-------------------------------------
 \section{Conclusion}
-%------------------------------------------
+%=========================================================================
+\label{sec:conclusion}
+
 Fusce id magna leo, in porta lectus. Aenean convallis magna sit amet ligula
 porttitor vehicula. Morbi pulvinar justo sed sapien pellentesque vitae viverra
 dui hendrerit. Vivamus nulla nunc, imperdiet congue euismod ultricies,

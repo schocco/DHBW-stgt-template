@@ -29,7 +29,7 @@ by \\
 \begin{table}[H]
 \begin{center}
   \begin{tabular}{p{0.5\textwidth} p{0.5\textwidth}}
-	Training Company &	BW Cooperative State \newline University Stuttgart \\%\hline
+	Training Company &	BW Cooperative State \newline University Stuttgart \\
 	 				 &	 \\
 	Company 		 &	\\
 	Max Mustermann 	 &	Betreuer / Studiengangsleister\\
@@ -44,7 +44,9 @@ by \\
 \end{center}
 \end{table}
 
-\ifthenelse{\boolean{confidential}}{%
+% Note of confidentiality is only included when `confidential` is set
+% to `true` in header.tex
+\ifthenelse{\boolean{confidential}}{
 	\textbf{Confidential}\\%
 	The content of the paper must not be made available to third parties without
 	approval of the training company.\\
