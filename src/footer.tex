@@ -8,11 +8,10 @@
 % sets the appendix environment and resets the section counters
 \newpage \begin{appendices} 
 \appendixtocon %adds an 'Appendices' entry to the toc
-% renewal of appendixpagename needed to set proper font size of title
-\renewcommand*\appendixpagename{\Large Appendices}
+
 \appendixpage %prints the title on the page
 
-\subsection*{List of Appendices}
+\subsection*{\listappendixname}
 %--------------------------------
 % style of the \listofappendices command is defined in header.tex
 \listofappendices
@@ -50,7 +49,7 @@ dolor aliquam. Vivamus neque magna.
 % bibliography file is set in header.tex
 
 \newpage
-\addsec{Lists of references} %addsec: komaskript befehl - keine Nummerierung
+\addsec{\listrefname} %addsec: komaskript befehl - keine Nummerierung
 
 % Set headings for bibliographies
 \defbibheading{literatur}{\subsection*{List of Literature}}
@@ -80,20 +79,21 @@ dolor aliquam. Vivamus neque magna.
 	\item that I indicated the use of literal citations from literature as
 	      well as the use of ideas of other authors at the respective
 	      places in the paper.
-	\item that I have not presented my project paper for any other
+	\item that I have not presented my \papertype \ for any other
 	      examination.
 \end{enumerate}
 
 I am aware of the fact that an untrue declaration will have legal
 consequences."
 \\
+\vspace{2.6cm}
+
+\begin{tabular}{ p{0.5\textwidth} l}
+\rule{0.4\textwidth}{1pt} & \rule{0.4\textwidth}{1pt}\\
+Place, DD/MM/YYYY		  & Signature\\
+\end{tabular}
 \\
-\\
-\\
-\\
-\rule{0.5\textwidth}{1pt}
-\\
-Place, DD/MM/YYYY
+
 
 
 \end{document}

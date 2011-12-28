@@ -9,6 +9,7 @@
 
 % Language and encoding
 \usepackage[utf8]{inputenc}
+\usepackage{csquotes}
 \usepackage[USenglish]{babel}
 \usepackage[T1]{fontenc}
 
@@ -39,11 +40,11 @@
 \providecommand{\BIBand}{and}
 
 % Bibliography file
-\bibliography{bibliography} 
+\bibliography{bibliography}
 
 % Abbreviations
 \usepackage{nomencl}
-\renewcommand{\nomname}{List of Abbreviations}
+
 \setlength{\nomlabelwidth}{.25\hsize}
 \renewcommand{\nomlabel}[1]{#1 \dotfill}
 \makenomenclature
@@ -192,10 +193,46 @@
 	pdfborder=0 0 0,   % no boxes for hyperrefs
 	  } 
 
+%--------------------------------------------------------------------
+% Standard Names / Translations
+%--------------------------------------------------------------------
+% Table of Contents
+\renewcommand\contentsname{Table of Contents}
+% List of Abbreviations
+\renewcommand{\nomname}{List of Abbreviations}
+% Abstract
+\renewcommand{\abstractname}{Abstract}
+% Appendix
+\renewcommand{\appendixname}{Appendix}
+% renewal of appendixpagename needed to set proper font size of title
+\renewcommand*\appendixpagename{\Large Appendices}
+% ToC name for appendices
+\renewcommand{\appendixtocname}{Appendices}
+% List of Appendices
+\newcommand{\listappendixname}{List of Appendices}
+% Figure (caption)
+\renewcommand{\figurename}{Figure}
+% List of Figures
+\renewcommand{\listfigurename}{List of Figures}
+% List of Tables
+\renewcommand{\listtablename}{List of Tables}
+% References (for articles)
+\renewcommand{\refname}{References}
+% Lists of References
+\newcommand{\listrefname}{Lists of References}
+% Table (captions)
+\renewcommand{\tablename}{Table}
+% Listings (caption)
+\renewcommand\lstlistingname{Listing}
+% List of Listings
+\renewcommand\lstlistlistingname{List of Listings}
+% Autoref name for listings
+\def\lstlistingautorefname{Lst.}
 
 %--------------------------------------------------------------------
 % Begin document
 %--------------------------------------------------------------------
+
 
 \begin{document}
 
