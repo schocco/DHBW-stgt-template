@@ -22,6 +22,9 @@
 \DeclareNameAlias{last-first/first-last}{last-first}
 \DeclareNameAlias{default}{last-first}
 
+% Default sizes for bibliography list
+\newcommand{\lblwidth}{5cm}
+\newcommand{\entrywidth}{9.5cm}
 
 
 %FieldFormat for url+urldate
@@ -111,30 +114,27 @@
     {\printtext{\bibstring{\abx@tempa}}\abx@tempb} %prints "ed. by"
     {\usebibmacro{bytypestrg}{editor}{editor}}} %probably prints the editors name
 
-%bibenvironment with hanging indentation
-%should look like a table
+% bibenvironment with hanging indentation
+% should look like a table
+% see http://latex.computersci.org/Reference/ListEnvironments
+% for a description of available formatting parameters
 
-% available settings:
-%\parsep        Abstand zwischen den Absätzen eines Listenelementes
-%\itemsep       Zusätzlicher vertikaler Abstand zwischen den einzelnen Listenelementen
-%\leftmargin    Horizontaler Abstand zwischen dem linken Textrand und dem Listenelement
-%\rightmargin   Horizontaler Abstand zwischen dem rechten Textrand und dem Listenelement
-%\labelsep      Abstand zwischen der Marke und dem nachfolgenden Text 
-%\labelwidth    Breite der Box, die den Label beinhaltet
+\defbibenvironment{bibliography}%
+	%begin code: Sets list environment and specifies labels
+	{\list
+		%list label
+		{\parbox[t]{\lblwidth}{\usebibmacro{author/editor+others/translator+others}}}
+		%list formatting parameters
+		{\setlength{\topsep}{1cm}%
+		 \setlength{\itemsep}{0.5cm}%
+		 \setlength{\leftmargin}{6cm}%
+		 \setlength{\labelwidth}{\lblwidth}%
+		 \setlength{\labelsep}{1cm}%
+		}
+	}%	
+	{\endlist}%end code
+	{\item}%item code
 
-\defbibenvironment{bibliography}
-{\list
-%{ \parbox[t]{6cm}{\usebibmacro{author/editor+others/translator+others}}   }%paragraph environment for linebreaks
-{ \begin{minipage}[t]{6cm} \usebibmacro{author/editor+others/translator+others} \end{minipage}} %TODO: make it floating boxes, so text wraps around properly
-    {\setlength{\topsep}{1cm}
-    \setlength{\itemsep}{0.5cm}
-    %\setlength{\itemindent}{2.2cm}
-    \setlength{\leftmargin}{7cm}%
-    \setlength{\labelwidth}{6cm}
-    \setlength{\labelsep}{1cm}
-  }}
-{\endlist}
-{\item}
 
 % END own definitions %
 
@@ -160,6 +160,7 @@
 
 %TODO: article styles - same as books? not quite!
 \DeclareBibliographyDriver{article}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/translator+others}%
@@ -191,10 +192,11 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 %TODO: style of internet/intranet sources need to be adapted
-%Last name, first name (year): Title/topic of the Internet page/source, Internet address,
-%retrieval: DD.MM.YYYY
+% Last name, first name (year): Title/topic of the Internet page/source,
+% Internet address, retrieval: DD.MM.YYYY
 % Author and year of publication can often be found at the end of a website; (if the author /
 % year of publication is missing: “w. a.” / “w. y.”).
 % Example:
@@ -202,9 +204,9 @@
 %                   	retrieval: 02.06.2003
 
 \DeclareBibliographyDriver{online}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
-  %\usebibmacro{author/editor+others/translator+others}%commented out to avoid displaying author names twice
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{title}%
   % the following commands are not required, feel free to uncomment them if you think you need them
@@ -237,12 +239,15 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 %requirement by DHBW:
 % lastname, fn. (year)	Title of work, subtitle, series, (editor), volume,
-%TODO: remove dot after entries						edition, place of publication: publishing house
+% edition, place of publication: publishing house
+%TODO: remove dot after entries						
 
 \DeclareBibliographyDriver{book}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
 %  \usebibmacro{author/editor+others/translator+others} %used as label and therefor excluded here
@@ -284,8 +289,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{booklet}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/editor+others/translator+others}%
@@ -316,8 +323,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{collection}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{editor+others}%
@@ -357,8 +366,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{inbook}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/translator+others}%
@@ -403,8 +414,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{incollection}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/translator+others}%
@@ -447,6 +460,7 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 % INPROCEEDINGS
 % TODO: should look like this:
@@ -456,6 +470,7 @@
 % edition, (editor, if applicable), volume, if applicable,
 % edition, place of p
 \DeclareBibliographyDriver{inproceedings}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
  % \usebibmacro{begentry}%
  % \usebibmacro{author/translator+others}%
@@ -500,8 +515,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{manual}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/editor}%
@@ -542,8 +559,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{misc}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/editor+others/translator+others}%
@@ -572,8 +591,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{patent}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author}%
@@ -605,8 +626,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{periodical}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{editor}%
@@ -629,10 +652,12 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 % PROCEEDINGS
 % not implemented - use inproceedings instead
 \DeclareBibliographyDriver{proceedings}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{editor+others}%
@@ -674,8 +699,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{report}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author}%
@@ -710,8 +737,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{thesis}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author}%
@@ -742,8 +771,10 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{unpublished}{%
+  \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author}%
@@ -768,6 +799,7 @@
   \setunit{\bibpagerefpunct}\newblock
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
+  }
 
 \DeclareBibliographyDriver{shorthands}{%
   \usedriver
