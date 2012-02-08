@@ -6,7 +6,8 @@ Info
 ======
 This is a LaTeX template for project papers written at the Corporate State
 University Stuttgart (*"Duale Hochschule Baden Württemberg"*) in the program 
-Business Information Management (*"Wirtschaftsinformatik"*).
+Business Information Management (*"Wirtschaftsinformatik"*). However this
+template might provide a good basis for other scientific papers as well.
 Formatting of this paper should comply with the citation regulations for
 scientific papers available here:
 <http://studium.dhbw-stuttgart.de/winf/informationen-downloads/projektarbeit.html>
@@ -55,7 +56,7 @@ Customization
     Alternatively add all entries needed to `bibliography.bib`
   - citation styles are defined in `dhbw_ibim.cbx`
   - bibliography styles are defined in `dhbw_ibim.bbx`
-  - you can change the bibkiography / citation style in `header.tex`. For a list of
+  - you can change the bibliography / citation style in `header.tex`. For a list of
     available styles see the `Biblatex <http://www.ctan.org/pkg/biblatex>`_ documentation
   - You can split your references into several lists by using filters like
     `\printbibliography[type=online]`, `\printbibliography[nottype=online]`
