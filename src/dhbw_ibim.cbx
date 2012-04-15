@@ -102,8 +102,8 @@
   \iffieldundef{labelyear}
     {}
     {\printtext[bibhyperref]{%
-       \mkbibparens{\printfield{labelyear}}%
-       \printfield{extrayear}}}}
+       \mkbibparens{\printfield{labelyear} \printfield{extrayear}}%
+       }}}
 
 \newbibmacro*{cite:postnote}{%
   \ifbool{cbx:loccit}
