@@ -53,7 +53,7 @@
 
 
 %add space after author-block
-\renewcommand*{\labelnamepunct}{\addspace}
+%\renewcommand*{\labelnamepunct}{\addspace}
 
 %slashes between multiple authors, epublishers, places
 \renewcommand*{\multinamedelim}{\addslash}
@@ -473,9 +473,9 @@
   \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
  % \usebibmacro{begentry}%
- % \usebibmacro{author/translator+others}%
+  %\usebibmacro{author/translator+others}%
   \setunit{\labelnamepunct}\newblock
-  \usebibmacro{title}% TODO: remove parantheses
+  \usebibmacro{title}%TODO: remove parantheses
   \newunit
   \printlist{language}%
   \newunit\newblock
@@ -1159,7 +1159,7 @@
   \usebibmacro{setpageref}%
   \finentry}
 
-%TODO: abbreviate first name!
+
 \renewbibmacro*{author}{%
   \ifboolexpr{
     test \ifuseauthor
@@ -1168,7 +1168,8 @@
   }
     {\usebibmacro{bbx:dashcheck}
        {\bibnamedash}
-       {\usebibmacro{bbx:savehash}%
+       {%\usebibmacro{bbx:savehash}%hash must not be saved, otherwise labels
+       % wot be displayed for subsequent books of same year with same author
         \printnames{author}%
 	\iffieldundef{authortype}
 	  {\setunit{\addspace}}
