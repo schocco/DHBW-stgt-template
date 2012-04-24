@@ -105,10 +105,12 @@
 % table with entry type myappendix
 \newcommand{\addtoappendixlist}[1]{\addcontentsline{app}{myappendix}{#1}}
 
+
 % Define the command actually used to start an Appendix - generate a
 % header and then insert the string name into the table.
 \newcommand{\appsection}[1]{%
-	\addtocounter{appendixctr}{1}
+	%\addtocounter{appendixctr}{1}
+	\refstepcounter{appendixctr}
 	\subsection*{Appendix \arabic{appendixctr}:\hspace{15pt}#1}
 	\addtoappendixlist{Appendix \arabic{appendixctr}:\hspace{10pt}#1}
 }
