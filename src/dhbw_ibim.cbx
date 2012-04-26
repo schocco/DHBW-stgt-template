@@ -14,6 +14,12 @@
 \DeclareFieldFormat[patent,thesis]{citetitle}{#1}
 \DeclareFieldFormat[unpublished]{citetitle}{#1}
 
+% Point default labelname formatting directive  to `first-last`.
+% That way the authors first name will be displayed in footnotes created
+% by \footcite and \footcitetext
+\DeclareNameAlias{labelname}{first-last}
+
+
 % END own definitions %
 
 
@@ -102,7 +108,7 @@
   \iffieldundef{labelyear}
     {}
     {\printtext[bibhyperref]{%
-       \mkbibparens{\printfield{labelyear} \printfield{extrayear}}%
+       \mkbibparens{\printfield{labelyear}\printfield{extrayear}}%
        }}}
 
 \newbibmacro*{cite:postnote}{%
@@ -161,7 +167,7 @@
   {\usebibmacro{citeindex}%
    \usebibmacro{cite}}
   {\multicitedelim}
-  {\usebibmacro{cite:postnote}}
+  {\usebibmacro{cite:postnote}\nopunct}
 
 \DeclareCiteCommand{\smartcite}[\iffootnote\mkbibparens\mkbibfootnote]
   {\usebibmacro{prenote}}
