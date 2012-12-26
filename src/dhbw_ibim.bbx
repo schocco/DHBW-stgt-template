@@ -9,7 +9,9 @@
 % BEGIN own definitions %
 
 %titles should be unformatted / not emphasised
-\DeclareFieldFormat{title}{#1\isdot}	%\isdot prevents double punctuation
+\DeclareFieldFormat
+	[article,inbook,incollection,inproceedings,patent,thesis,unpublished,online,book]
+	{title}{#1\isdot}	%\isdot prevents double punctuation
 \DeclareFieldFormat[inproceedings]{title}{#1\isdot}
 \DeclareFieldFormat[article]{title}{#1\isdot}
 \DeclareFieldFormat{booktitle}{#1\isdot}
@@ -743,7 +745,7 @@
   \parbox[t]{\entrywidth}{%
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
-  \usebibmacro{author}%
+  %\usebibmacro{author}%
   \setunit{\labelnamepunct}\newblock
   \usebibmacro{title}%
   \newunit
