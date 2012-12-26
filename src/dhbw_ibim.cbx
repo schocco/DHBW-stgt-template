@@ -8,13 +8,11 @@
 % \citetitle format
 % DHBW does not state how the title should be formatted, when used in a paragraph
 % We assume, that all occurences/types of titles should be unformatted
-\DeclareFieldFormat{citetitle}{#1}
-\DeclareFieldFormat[article]{citetitle}{#1}
-\DeclareFieldFormat[inbook,incollection,inproceedings]{citetitle}{#1}
-\DeclareFieldFormat[patent,thesis]{citetitle}{#1}
-\DeclareFieldFormat[unpublished]{citetitle}{#1}
+\DeclareFieldFormat
+	[article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+	{citetitle}{\textit{#1}}
 
-% Point default labelname formatting directive  to `first-last`.
+% Point default labelname formatting directive  to `last-first`.
 % That way the authors first name will be displayed in footnotes created
 % by \footcite and \footcitetext
 \DeclareNameAlias{labelname}{last-first}
