@@ -38,10 +38,10 @@
   urlseen = {retrieval\addcolon}%	replace 'visited on' with 'retrieval:'
 }
 %edition should be like 2nd Edn., not displayed if 1st Edn.
-\DeclareFieldFormat{edition}{%
-  \ifthenelse{\ifinteger{#1}\AND\NOT #1=1}%only display if a number and not 1
-    {\mkbibordedition{#1}~\bibstring{edition}}
-    {}}
+\DeclareFieldFormat{edition}%
+                   {\ifinteger{#1}%
+                    {\ifnum#1>1 \mkbibordedition{#1} \bibstring{edition} \else \fi}%
+                    {#1\isdot}}
 
 %pagerefs after articles and proceedings should have a leading "p."
 %\newbibmacro*{pageref}{%
@@ -158,7 +158,7 @@
 \ExecuteBibliographyOptions{isbn,url,doi,eprint}
 
 \newbibmacro*{begentry}{}
-\newbibmacro*{finentry}{\finentry}
+\newbibmacro*{finentry}{}
 
 %TODO: article styles - same as books? not quite!
 \DeclareBibliographyDriver{article}{%
