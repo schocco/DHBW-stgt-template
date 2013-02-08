@@ -233,6 +233,41 @@
 % Autoref name for listings
 \def\lstlistingautorefname{Lst.}
 
+
+%--------------------------------------------------------------------
+% Ensuring that labels in Lists of Stuff are
+% identical to those in the captions
+%--------------------------------------------------------------------
+\usepackage[titles]{tocloft}
+
+\newlength{\mylen}
+
+%Figures
+\renewcommand{\cftfigpresnum}{\figurename\enspace}
+\renewcommand{\cftfigaftersnum}{:}
+\settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum}
+\addtolength{\cftfignumwidth}{\mylen}
+%Tables
+\renewcommand{\cfttabpresnum}{\tablename\enspace}
+\renewcommand{\cfttabaftersnum}{:}
+\settowidth{\mylen}{\cfttabpresnum\cfttabaftersnum}
+\addtolength{\cfttabnumwidth}{\mylen}
+%Listings (Hack)
+\makeatletter
+\begingroup
+\let\newcounter\@gobble\let\setcounter\@gobbletwo
+\globaldefs\@ne \let\c@loldepth\@ne
+\newlistof{listings}{lol}{\lstlistlistingname}
+\endgroup
+\let\l@lstlisting\l@listings
+\let\lstlistoflistings\listoflistings
+\makeatother
+
+\renewcommand{\cftlistingspresnum}{\lstlistingname\enspace}
+\renewcommand{\cftlistingsaftersnum}{:}
+\settowidth{\mylen}{\cftlistingspresnum\cftlistingsaftersnum}
+\addtolength{\cftlistingsnumwidth}{\mylen}
+
 %--------------------------------------------------------------------
 % Begin document
 %--------------------------------------------------------------------
